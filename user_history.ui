@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>551</width>
+    <height>705</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="headerText">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>20</y>
+     <width>181</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-weight:bold;
+font-size:24pt;
+background-color:none;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>USER HISTORY</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>60</x>
+     <y>190</y>
+     <width>421</width>
+     <height>311</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">backround-color:rgba(255,255,255,30);
+border:1px solid rdba(255,255,255,40);
+border-radius:6px;
+font-size:12pt;</string>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="clientLabel">
+      <property name="text">
+       <string>client:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>Adina</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Nurti</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Elina</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aman</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Azat</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kutman</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="infoLabel">
+      <property name="text">
+       <string>movie:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QListWidget" name="listInfo">
+      <item>
+       <property name="text">
+        <string>Home alone- 16:00</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Gladiator2 - 17:30</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Moana2 - 18:40</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Evil - 20:10</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Venom3- 22;15</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone2- 00:00</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

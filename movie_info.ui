@@ -1,0 +1,237 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>541</width>
+    <height>701</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="headerText">
+   <property name="geometry">
+    <rect>
+     <x>140</x>
+     <y>20</y>
+     <width>261</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-weight:bold;
+font-size:24pt;
+background-color:none;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>MOVIE INFO</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>50</x>
+     <y>160</y>
+     <width>421</width>
+     <height>261</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">backround-color:rgba(255,255,255,30);
+border:1px solid rdba(255,255,255,40);
+border-radius:6px;
+font-size:12pt;</string>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="filmText">
+      <property name="text">
+       <string>FILM:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="QuantityLabel">
+      <property name="text">
+       <string>QUANTITY:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="QuantityTitle">
+      <property name="text">
+       <string>1258</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="seanseLabel">
+      <property name="text">
+       <string>SEANCE:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="seanseTitle">
+      <property name="text">
+       <string>6</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="0">
+     <widget class="QLabel" name="peopleLabel">
+      <property name="text">
+       <string>PEOPLE:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QListWidget" name="listUsers">
+      <item>
+       <property name="text">
+        <string>Nurti - 16:00</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Kutman - 17:30</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Jumu - 18:40</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aiat - 20:10</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Adina - 22;15</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Sumay - 00:00</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Aktan - 00:30</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Adilet - 00:50</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Isma - 20:00</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Nurjigit - 20:00</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Atai - 19:50</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Omur - 15:45</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>New Item</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>Moana2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Venom3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Evil</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Gladiator2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone2</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

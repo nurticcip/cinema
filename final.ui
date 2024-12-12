@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>546</width>
+    <height>709</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="headerText">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>30</y>
+     <width>71</width>
+     <height>61</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-weight:bold;
+font-size:24pt;
+background-color:none;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>FINAL</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="bodyText">
+   <property name="geometry">
+    <rect>
+     <x>170</x>
+     <y>210</y>
+     <width>181</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">font-size:16pt;
+background-color:none;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>Thank's for the purchase!</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="movies">
+   <property name="geometry">
+    <rect>
+     <x>150</x>
+     <y>450</y>
+     <width>241</width>
+     <height>71</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 30px;
+font-weight: 500;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Movies</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

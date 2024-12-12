@@ -1,0 +1,699 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>545</width>
+    <height>706</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="headerText">
+   <property name="geometry">
+    <rect>
+     <x>200</x>
+     <y>20</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-weight:bold;
+font-size:24pt;
+background-color:none;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>MOVIES</string>
+   </property>
+  </widget>
+  <widget class="QWidget" name="layoutWidget">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>220</y>
+     <width>481</width>
+     <height>381</height>
+    </rect>
+   </property>
+   <layout class="QGridLayout" name="gridLayout">
+    <property name="leftMargin">
+     <number>5</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>5</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <property name="horizontalSpacing">
+     <number>14</number>
+    </property>
+    <property name="verticalSpacing">
+     <number>25</number>
+    </property>
+    <item row="5" column="4">
+     <widget class="QPushButton" name="time1330">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>13:30</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="2">
+     <widget class="QPushButton" name="time1410">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>14:10</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="3">
+     <widget class="QPushButton" name="time1430">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>14:30</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="5">
+     <widget class="QPushButton" name="time1200">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>12:00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="5">
+     <widget class="QPushButton" name="time2030">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>20:30</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="4">
+     <widget class="QPushButton" name="time1650">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>16:50</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="2">
+     <widget class="QPushButton" name="time1045">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>10:45</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QLabel" name="gladiator2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Gladiator 2</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="3">
+     <widget class="QPushButton" name="time1150">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>11:50</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLabel" name="moana2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string> Moana 2</string>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="2">
+     <widget class="QPushButton" name="time1030">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>10:30</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="4">
+     <widget class="QPushButton" name="time1540">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>15:40</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLabel" name="venom3">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Venom 3</string>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="5">
+     <widget class="QPushButton" name="time2000">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>20:00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="2">
+     <widget class="QPushButton" name="time1100">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>11:00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="3">
+     <widget class="QPushButton" name="time1335">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>13:35</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="5">
+     <widget class="QPushButton" name="time1800">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>18:00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="4">
+     <widget class="QPushButton" name="time1640">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>16:40</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLabel" name="homeAlone">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Home alone</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="2">
+     <widget class="QPushButton" name="time1000">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>10:00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="3">
+     <widget class="QPushButton" name="time1420">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>14:20</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="5">
+     <widget class="QPushButton" name="time2105">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>21:05</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="3">
+     <widget class="QPushButton" name="time1500">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>15:00</string>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="4">
+     <widget class="QPushButton" name="time1755">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>17:55</string>
+      </property>
+     </widget>
+    </item>
+    <item row="5" column="1">
+     <widget class="QLabel" name="evil">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Evil</string>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="2">
+     <widget class="QPushButton" name="time1415">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>14:15</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="3">
+     <widget class="QPushButton" name="time1810">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>18:10</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="1">
+     <widget class="QLabel" name="evil2">
+      <property name="font">
+       <font>
+        <pointsize>10</pointsize>
+        <bold>true</bold>
+       </font>
+      </property>
+      <property name="text">
+       <string>Evil</string>
+      </property>
+      <property name="margin">
+       <number>5</number>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="5">
+     <widget class="QPushButton" name="time2310">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>23:10</string>
+      </property>
+     </widget>
+    </item>
+    <item row="4" column="4">
+     <widget class="QPushButton" name="time2130">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(173, 216, 230); /* Светлый голубой цвет */
+    color: rgb(0, 0, 0); /* Черный цвет текста для контраста */
+    font-size: 20px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(135, 206, 250); /* Чуть более насыщенный голубой при нажатии */
+}</string>
+      </property>
+      <property name="text">
+       <string>21:30</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QPushButton" name="updateButton">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>120</y>
+     <width>141</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 10px;
+    background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста */
+    font-size: 20px;
+	font-weight: 500
+}
+
+QPushButton:pressed {
+    background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Udate</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="movieInfoButton">
+   <property name="geometry">
+    <rect>
+     <x>210</x>
+     <y>120</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 10px;
+    background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста */
+    font-size: 20px;
+	font-weight: 500
+}
+
+QPushButton:pressed {
+    background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>Movie info</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="historyButton">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>120</y>
+     <width>151</width>
+     <height>41</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+	font: 75 8pt &quot;MS Shell Dlg 2&quot;;
+    border-radius: 10px;
+    background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста */
+    font-size: 20px;
+	font-weight: 500
+}
+
+QPushButton:pressed {
+    background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+}
+</string>
+   </property>
+   <property name="text">
+    <string>History</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

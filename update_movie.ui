@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Dialog</class>
+ <widget class="QDialog" name="Dialog">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>549</width>
+    <height>701</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Dialog</string>
+  </property>
+  <widget class="QLabel" name="headerText">
+   <property name="geometry">
+    <rect>
+     <x>190</x>
+     <y>30</y>
+     <width>181</width>
+     <height>51</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">color:black;
+font-weight:bold;
+font-size:24pt;
+background-color:none;
+border:none;</string>
+   </property>
+   <property name="text">
+    <string>UPDATE MOVIE</string>
+   </property>
+  </widget>
+  <widget class="QFrame" name="frame">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>140</y>
+     <width>471</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">backround-color:rgba(255,255,255,30);
+border:1px solid rdba(255,255,255,40);
+border-radius:6px;
+font-size:12pt;</string>
+   </property>
+   <layout class="QFormLayout" name="formLayout">
+    <item row="0" column="0">
+     <widget class="QLabel" name="fILMLabel">
+      <property name="text">
+       <string>FILM:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QLineEdit" name="filmInput">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="0">
+     <widget class="QLabel" name="quantityLabel">
+      <property name="text">
+       <string>QUANTITY:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="1" column="1">
+     <widget class="QLineEdit" name="quantityInput">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="0">
+     <widget class="QLabel" name="seanseLabel">
+      <property name="text">
+       <string>SEANCE:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QLineEdit" name="seanseInput">
+      <property name="text">
+       <string/>
+      </property>
+     </widget>
+    </item>
+    <item row="3" column="1">
+     <widget class="QPushButton" name="addButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(50, 205, 50); /* Лаймово-зелёный цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста */
+    font-size: 30px;
+}
+
+QPushButton:pressed {
+    background-color: rgb(34, 139, 34); /* Тёмно-зелёный цвет при нажатии */
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Add</string>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QFrame" name="frame_2">
+   <property name="geometry">
+    <rect>
+     <x>40</x>
+     <y>390</y>
+     <width>471</width>
+     <height>191</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">backround-color:rgba(255,255,255,30);
+border:1px solid rdba(255,255,255,40);
+border-radius:6px;
+font-size:12pt;</string>
+   </property>
+   <layout class="QFormLayout" name="formLayout_3">
+    <item row="0" column="0">
+     <widget class="QLabel" name="filmDel">
+      <property name="text">
+       <string>FILM:</string>
+      </property>
+     </widget>
+    </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="deleteButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0); /* Красный цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста для контраста */
+    font-size: 30px;
+	font-weight: 500;
+}
+
+
+
+QPushButton:pressed {
+    background-color: rgb(200, 0, 0); /* Темно-красный цвет при нажатии */
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>Moana2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Venom3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Evil</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Gladiator2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone2</string>
+       </property>
+      </item>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
