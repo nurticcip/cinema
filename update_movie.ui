@@ -63,35 +63,7 @@ font-size:12pt;</string>
       </property>
      </widget>
     </item>
-    <item row="1" column="0">
-     <widget class="QLabel" name="quantityLabel">
-      <property name="text">
-       <string>QUANTITY:</string>
-      </property>
-     </widget>
-    </item>
     <item row="1" column="1">
-     <widget class="QLineEdit" name="quantityInput">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="seanseLabel">
-      <property name="text">
-       <string>SEANCE:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="seanseInput">
-      <property name="text">
-       <string/>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="1">
      <widget class="QPushButton" name="addButton">
       <property name="styleSheet">
        <string notr="true">QPushButton {
@@ -137,30 +109,6 @@ font-size:12pt;</string>
       </property>
      </widget>
     </item>
-    <item row="2" column="1">
-     <widget class="QPushButton" name="deleteButton">
-      <property name="styleSheet">
-       <string notr="true">QPushButton {
-    border-radius: 10px;
-    background-color: rgb(255, 0, 0); /* Красный цвет */
-    color: rgb(255, 255, 255); /* Белый цвет текста для контраста */
-    font-size: 30px;
-	font-weight: 500;
-}
-
-
-
-QPushButton:pressed {
-    background-color: rgb(200, 0, 0); /* Темно-красный цвет при нажатии */
-}
-
-</string>
-      </property>
-      <property name="text">
-       <string>Delete</string>
-      </property>
-     </widget>
-    </item>
     <item row="0" column="1">
      <widget class="QComboBox" name="comboBox">
       <item>
@@ -195,7 +143,58 @@ QPushButton:pressed {
       </item>
      </widget>
     </item>
+    <item row="2" column="1">
+     <widget class="QPushButton" name="deleteButton">
+      <property name="styleSheet">
+       <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: rgb(255, 0, 0); /* Красный цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста для контраста */
+    font-size: 30px;
+	font-weight: 500;
+}
+
+
+
+QPushButton:pressed {
+    background-color: rgb(200, 0, 0); /* Темно-красный цвет при нажатии */
+}
+
+</string>
+      </property>
+      <property name="text">
+       <string>Delete</string>
+      </property>
+     </widget>
+    </item>
    </layout>
+  </widget>
+  <widget class="QPushButton" name="addButton_2">
+   <property name="geometry">
+    <rect>
+     <x>230</x>
+     <y>630</y>
+     <width>101</width>
+     <height>38</height>
+    </rect>
+   </property>
+   <property name="styleSheet">
+    <string notr="true">QPushButton {
+    border-radius: 10px;
+    background-color: #dda15e; /* Лаймово-зелёный цвет */
+    color: rgb(255, 255, 255); /* Белый цвет текста */
+    font-size: 30px;
+}
+
+QPushButton:pressed {
+    background-color: #bc6c25; /* Тёмно-зелёный цвет при нажатии */
+}
+
+</string>
+   </property>
+   <property name="text">
+    <string>Home</string>
+   </property>
   </widget>
  </widget>
  <resources/>

@@ -11,7 +11,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 
 
-class Ui_Dialog(object):
+class updateMoviePage(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(549, 701)
@@ -39,20 +39,6 @@ class Ui_Dialog(object):
         self.filmInput.setText("")
         self.filmInput.setObjectName("filmInput")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.filmInput)
-        self.quantityLabel = QtWidgets.QLabel(self.frame)
-        self.quantityLabel.setObjectName("quantityLabel")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.quantityLabel)
-        self.quantityInput = QtWidgets.QLineEdit(self.frame)
-        self.quantityInput.setText("")
-        self.quantityInput.setObjectName("quantityInput")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.quantityInput)
-        self.seanseLabel = QtWidgets.QLabel(self.frame)
-        self.seanseLabel.setObjectName("seanseLabel")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.seanseLabel)
-        self.seanseInput = QtWidgets.QLineEdit(self.frame)
-        self.seanseInput.setText("")
-        self.seanseInput.setObjectName("seanseInput")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.seanseInput)
         self.addButton = QtWidgets.QPushButton(self.frame)
         self.addButton.setStyleSheet("QPushButton {\n"
 "    border-radius: 10px;\n"
@@ -67,7 +53,7 @@ class Ui_Dialog(object):
 "\n"
 "")
         self.addButton.setObjectName("addButton")
-        self.formLayout.setWidget(3, QtWidgets.QFormLayout.FieldRole, self.addButton)
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.addButton)
         self.frame_2 = QtWidgets.QFrame(Dialog)
         self.frame_2.setGeometry(QtCore.QRect(40, 390, 471, 191))
         self.frame_2.setStyleSheet("backround-color:rgba(255,255,255,30);\n"
@@ -80,6 +66,15 @@ class Ui_Dialog(object):
         self.filmDel = QtWidgets.QLabel(self.frame_2)
         self.filmDel.setObjectName("filmDel")
         self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.filmDel)
+        self.comboBox = QtWidgets.QComboBox(self.frame_2)
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.comboBox.addItem("")
+        self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
         self.deleteButton = QtWidgets.QPushButton(self.frame_2)
         self.deleteButton.setStyleSheet("QPushButton {\n"
 "    border-radius: 10px;\n"
@@ -98,15 +93,21 @@ class Ui_Dialog(object):
 "")
         self.deleteButton.setObjectName("deleteButton")
         self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.deleteButton)
-        self.comboBox = QtWidgets.QComboBox(self.frame_2)
-        self.comboBox.setObjectName("comboBox")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.comboBox.addItem("")
-        self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
+        self.addButton_2 = QtWidgets.QPushButton(Dialog)
+        self.addButton_2.setGeometry(QtCore.QRect(230, 630, 101, 38))
+        self.addButton_2.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: #dda15e; /* Лаймово-зелёный цвет */\n"
+"    color: rgb(255, 255, 255); /* Белый цвет текста */\n"
+"    font-size: 30px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: #bc6c25; /* Тёмно-зелёный цвет при нажатии */\n"
+"}\n"
+"\n"
+"")
+        self.addButton_2.setObjectName("addButton_2")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -116,24 +117,23 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.headerText.setText(_translate("Dialog", "UPDATE MOVIE"))
         self.fILMLabel.setText(_translate("Dialog", "FILM:"))
-        self.quantityLabel.setText(_translate("Dialog", "QUANTITY:"))
-        self.seanseLabel.setText(_translate("Dialog", "SEANCE:"))
         self.addButton.setText(_translate("Dialog", "Add"))
         self.filmDel.setText(_translate("Dialog", "FILM:"))
-        self.deleteButton.setText(_translate("Dialog", "Delete"))
         self.comboBox.setItemText(0, _translate("Dialog", "Moana2"))
         self.comboBox.setItemText(1, _translate("Dialog", "Venom3"))
         self.comboBox.setItemText(2, _translate("Dialog", "Evil"))
         self.comboBox.setItemText(3, _translate("Dialog", "Gladiator2"))
         self.comboBox.setItemText(4, _translate("Dialog", "Home alone"))
         self.comboBox.setItemText(5, _translate("Dialog", "Home alone2"))
+        self.deleteButton.setText(_translate("Dialog", "Delete"))
+        self.addButton_2.setText(_translate("Dialog", "Home"))
 
 
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     Dialog = QtWidgets.QDialog()
-    ui = Ui_Dialog()
+    ui = updateMoviePage()
     ui.setupUi(Dialog)
     Dialog.show()
     sys.exit(app.exec_())

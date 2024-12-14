@@ -16,14 +16,14 @@
   <widget class="QLabel" name="headerText">
    <property name="geometry">
     <rect>
-     <x>140</x>
+     <x>190</x>
      <y>20</y>
-     <width>261</width>
+     <width>141</width>
      <height>51</height>
     </rect>
    </property>
    <property name="styleSheet">
-    <string notr="true">color:black;
+    <string notr="true">color:#fff;
 font-weight:bold;
 font-size:24pt;
 background-color:none;
@@ -56,42 +56,48 @@ font-size:12pt;</string>
       </property>
      </widget>
     </item>
+    <item row="0" column="1">
+     <widget class="QComboBox" name="comboBox">
+      <item>
+       <property name="text">
+        <string>Moana2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Venom3</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Evil</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Gladiator2</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone</string>
+       </property>
+      </item>
+      <item>
+       <property name="text">
+        <string>Home alone2</string>
+       </property>
+      </item>
+     </widget>
+    </item>
     <item row="1" column="0">
-     <widget class="QLabel" name="QuantityLabel">
-      <property name="text">
-       <string>QUANTITY:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="1" column="1">
-     <widget class="QLineEdit" name="QuantityTitle">
-      <property name="text">
-       <string>1258</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="0">
-     <widget class="QLabel" name="seanseLabel">
-      <property name="text">
-       <string>SEANCE:</string>
-      </property>
-     </widget>
-    </item>
-    <item row="2" column="1">
-     <widget class="QLineEdit" name="seanseTitle">
-      <property name="text">
-       <string>6</string>
-      </property>
-     </widget>
-    </item>
-    <item row="3" column="0">
      <widget class="QLabel" name="peopleLabel">
       <property name="text">
        <string>PEOPLE:</string>
       </property>
      </widget>
     </item>
-    <item row="3" column="1">
+    <item row="1" column="1">
      <widget class="QListWidget" name="listUsers">
       <item>
        <property name="text">
@@ -191,40 +197,6 @@ font-size:12pt;</string>
       <item>
        <property name="text">
         <string>New Item</string>
-       </property>
-      </item>
-     </widget>
-    </item>
-    <item row="0" column="1">
-     <widget class="QComboBox" name="comboBox">
-      <item>
-       <property name="text">
-        <string>Moana2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Venom3</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Evil</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Gladiator2</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Home alone</string>
-       </property>
-      </item>
-      <item>
-       <property name="text">
-        <string>Home alone2</string>
        </property>
       </item>
      </widget>

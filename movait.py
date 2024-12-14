@@ -314,6 +314,8 @@ class Ui_SignUpWindow(QtWidgets.QWidget):
                 QtWidgets.QMessageBox.critical(None, 'Error', "Can't find this person!")
         else:
             QtWidgets.QMessageBox.critical(None, 'Error', 'Emplty input fields!')
+            self.passwordInput.setText("")
+            self.usernameInput.setText("")
 
 class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
     def __init__(self, time, movie):
@@ -528,17 +530,11 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         # Создаем кнопки
         self.create_buttons()
 
-
-
-
-
-
-
     def create_buttons(self):
         booked_seats = requests.get('http://nurticcip.pythonanywhere.com/get_movie_booked_seats', 
                                 params={'movie': self.movie, 'seance': self.time}).json()
-        rows = 'abcdefghij' 
-        cols = 16  
+        rows = 'abcdefg' 
+        cols = 10  
         x_start, y_start = 76, 104  
         button_width, button_height = 41, 30  
         x_gap, y_gap = 54, 44 
@@ -649,8 +645,11 @@ class MovieListApp(QMainWindow):
         # Upper layout for additional buttons
         upper_layout = QHBoxLayout()
         history_button = QPushButton("History")
+        history_button.clicked.connect(self.userHistory)
         movie_info_button = QPushButton("Movie Info")
+        movie_info_button.clicked.connect(self.movieInfo)
         update_button = QPushButton("Update Movie")
+        update_button.clicked.connect(self.updateMovie)
         upper_layout.addWidget(history_button)
         upper_layout.addWidget(movie_info_button)
         upper_layout.addWidget(update_button)
@@ -719,14 +718,298 @@ class MovieListApp(QMainWindow):
         self.hall3_window = SeatGenerator('14:10', movie)
         self.hall3_window.show()
 
+    def updateMovie(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = UpdateMoviePage()
+        self.ui.setupUi(self.window)
+        self.window.show()
 
+    def movieInfo(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = MovieInfo()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+    def userHistory(self):
+        self.window = QtWidgets.QWidget()
+        self.ui = UserHistory()
+        self.ui.setupUi(self.window)
+        self.window.show()
+
+        
 class Window(QtWidgets.QMainWindow, Ui_SignUpWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
         self.show()
 
+class UpdateMoviePage(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(549, 701)
+        self.headerText = QtWidgets.QLabel(Dialog)
+        self.headerText.setGeometry(QtCore.QRect(190, 30, 181, 51))
+        self.headerText.setStyleSheet("color:black;\n"
+"font-weight:bold;\n"
+"font-size:24pt;\n"
+"background-color:none;\n"
+"border:none;")
+        self.headerText.setObjectName("headerText")
+        self.frame = QtWidgets.QFrame(Dialog)
+        self.frame.setGeometry(QtCore.QRect(40, 140, 471, 191))
+        self.frame.setStyleSheet("backround-color:rgba(255,255,255,30);\n"
+"border:1px solid rdba(255,255,255,40);\n"
+"border-radius:6px;\n"
+"font-size:12pt;")
+        self.frame.setObjectName("frame")
+        self.formLayout = QtWidgets.QFormLayout(self.frame)
+        self.formLayout.setObjectName("formLayout")
+        self.fILMLabel = QtWidgets.QLabel(self.frame)
+        self.fILMLabel.setObjectName("fILMLabel")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.fILMLabel)
+        self.filmInput = QtWidgets.QLineEdit(self.frame)
+        self.filmInput.setText("")
+        self.filmInput.setObjectName("filmInput")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.filmInput)
+        self.addButton = QtWidgets.QPushButton(self.frame)
+        self.addButton.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(50, 205, 50); /* Лаймово-зелёный цвет */\n"
+"    color: rgb(255, 255, 255); /* Белый цвет текста */\n"
+"    font-size: 30px;\n"
+"}\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(34, 139, 34); /* Тёмно-зелёный цвет при нажатии */\n"
+"}\n"
+"\n"
+"")
+        self.addButton.setObjectName("addButton")
+        self.addButton.clicked.connect(self.add_movie)
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.addButton)
+        self.frame_2 = QtWidgets.QFrame(Dialog)
+        self.frame_2.setGeometry(QtCore.QRect(40, 390, 471, 191))
+        self.frame_2.setStyleSheet("backround-color:rgba(255,255,255,30);\n"
+"border:1px solid rdba(255,255,255,40);\n"
+"border-radius:6px;\n"
+"font-size:12pt;")
+        self.frame_2.setObjectName("frame_2")
+        self.formLayout_3 = QtWidgets.QFormLayout(self.frame_2)
+        self.formLayout_3.setObjectName("formLayout_3")
+        self.filmDel = QtWidgets.QLabel(self.frame_2)
+        self.filmDel.setObjectName("filmDel")
+        self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.filmDel)
+        self.comboBox = QtWidgets.QComboBox(self.frame_2)
+        self.comboBox.setObjectName("comboBox")
+        self.formLayout_3.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
+        self.deleteButton = QtWidgets.QPushButton(self.frame_2)
+        self.deleteButton.setStyleSheet("QPushButton {\n"
+"    border-radius: 10px;\n"
+"    background-color: rgb(255, 0, 0); /* Красный цвет */\n"
+"    color: rgb(255, 255, 255); /* Белый цвет текста для контраста */\n"
+"    font-size: 30px;\n"
+"    font-weight: 500;\n"
+"}\n"
+"\n"
+"\n"
+"\n"
+"QPushButton:pressed {\n"
+"    background-color: rgb(200, 0, 0); /* Темно-красный цвет при нажатии */\n"
+"}\n"
+"\n"
+"")
+        self.deleteButton.setObjectName("deleteButton")
+        self.deleteButton.clicked.connect(self.delete_movie)
+        self.formLayout_3.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.deleteButton)
+        self.getMoviesList()
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.headerText.setText(_translate("Dialog", "UPDATE MOVIE"))
+        self.fILMLabel.setText(_translate("Dialog", "FILM:"))
+        self.addButton.setText(_translate("Dialog", "Add"))
+        self.filmDel.setText(_translate("Dialog", "FILM:"))
+        self.comboBox.setItemText(0, _translate("Dialog", "Moana2"))
+        self.comboBox.setItemText(1, _translate("Dialog", "Venom3"))
+        self.comboBox.setItemText(2, _translate("Dialog", "Evil"))
+        self.comboBox.setItemText(3, _translate("Dialog", "Gladiator2"))
+        self.comboBox.setItemText(4, _translate("Dialog", "Home alone"))
+        self.comboBox.setItemText(5, _translate("Dialog", "Home alone2"))
+        self.deleteButton.setText(_translate("Dialog", "Delete"))
+
+    def getMoviesList(self):
+        self.comboBox.clear()
+        movies_list = requests.get('http://nurticcip.pythonanywhere.com/get_movies').json()
+        for i in movies_list:
+            self.comboBox.addItem(i)
+
+
+    def add_movie(self):
+        movie = self.filmInput.text()
+        requests.get('http://nurticcip.pythonanywhere.com/add_movie', params={'movie':movie})
+        self.getMoviesList()
+
+    def delete_movie(self):
+        movie = self.comboBox.currentText()
+        requests.get('http://nurticcip.pythonanywhere.com/delete_movie', params={'movie':movie})
+        self.getMoviesList()
+
+class MovieInfo(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(541, 701)
+        self.headerText = QtWidgets.QLabel(Dialog)
+        self.headerText.setGeometry(QtCore.QRect(190, 20, 141, 51))
+        self.headerText.setStyleSheet("color:#fff;\n"
+"font-weight:bold;\n"
+"font-size:24pt;\n"
+"background-color:none;\n"
+"border:none;")
+        self.headerText.setObjectName("headerText")
+        self.frame = QtWidgets.QFrame(Dialog)
+        self.frame.setGeometry(QtCore.QRect(50, 160, 421, 261))
+        self.frame.setStyleSheet("backround-color:rgba(255,255,255,30);\n"
+"border:1px solid rdba(255,255,255,40);\n"
+"border-radius:6px;\n"
+"font-size:12pt;")
+        self.frame.setObjectName("frame")
+        self.formLayout = QtWidgets.QFormLayout(self.frame)
+        self.formLayout.setObjectName("formLayout")
+        self.filmText = QtWidgets.QLabel(self.frame)
+        self.filmText.setObjectName("filmText")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.filmText)
+        self.comboBox = QtWidgets.QComboBox(self.frame)
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.currentIndexChanged.connect(self.get_movie_history)
+
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
+        self.peopleLabel = QtWidgets.QLabel(self.frame)
+        self.peopleLabel.setObjectName("peopleLabel")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.peopleLabel)
+        self.listUsers = QtWidgets.QListWidget(self.frame)
+        self.listUsers.setObjectName("listUsers")
+      
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.listUsers)
+        self.getMoviesList()
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.headerText.setText(_translate("Dialog", "MOVIE INFO"))
+        self.filmText.setText(_translate("Dialog", "FILM:"))
+        self.peopleLabel.setText(_translate("Dialog", "PEOPLE:"))
+        __sortingEnabled = self.listUsers.isSortingEnabled()
+        self.listUsers.setSortingEnabled(False)
+        self.listUsers.setSortingEnabled(__sortingEnabled)
+
+    def getMoviesList(self):
+        self.comboBox.clear()
+        movies_list = requests.get('http://nurticcip.pythonanywhere.com/get_movies').json()
+        for i in movies_list:
+
+                self.comboBox.addItem(i)
+
+    def get_movie_history(self):
+        self.listUsers.clear()
+        movie = self.comboBox.currentText()
+        history = requests.get('http://nurticcip.pythonanywhere.com/get_movie_history', params={'movie':movie}).json()
+        arr = set()
+        for i in history:
+            arr.add(tuple(i))
+        text = []
+        for i in list(arr):
+            text.append(f'{i[0]} --> {i[1]}')
+        for i in text:
+            self.listUsers.addItem(i)
+
+class UserHistory(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
+        Dialog.resize(551, 705)
+        self.headerText = QtWidgets.QLabel(Dialog)
+        self.headerText.setGeometry(QtCore.QRect(200, 20, 181, 61))
+        self.headerText.setStyleSheet("color:black;\n"
+"font-weight:bold;\n"
+"font-size:24pt;\n"
+"background-color:none;\n"
+"border:none;")
+        self.headerText.setObjectName("headerText")
+        self.frame = QtWidgets.QFrame(Dialog)
+        self.frame.setGeometry(QtCore.QRect(60, 190, 421, 311))
+        self.frame.setStyleSheet("backround-color:rgba(255,255,255,30);\n"
+"border:1px solid rdba(255,255,255,40);\n"
+"border-radius:6px;\n"
+"font-size:12pt;")
+        self.frame.setObjectName("frame")
+        self.formLayout = QtWidgets.QFormLayout(self.frame)
+        self.formLayout.setObjectName("formLayout")
+        self.clientLabel = QtWidgets.QLabel(self.frame)
+        self.clientLabel.setObjectName("clientLabel")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.clientLabel)
+        self.comboBox = QtWidgets.QComboBox(self.frame)
+        self.comboBox.setObjectName("comboBox")
+        self.comboBox.currentIndexChanged.connect(self.get_user_history)
+        # self.comboBox.setGeometry(150,13,80,20)
+#         self.comboBox.setStyleSheet("QComboBox { font-size: 14px; }")
+#         self.comboBox.setStyleSheet("""
+#     QComboBox {
+#         padding: 5px;
+#         height: 25px;
+#     }
+# """)
+#         self.comboBox.adjustSize()
+#         self.comboBox.resize(150, 30)
+
+
+
+
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
+        self.infoLabel = QtWidgets.QLabel(self.frame)
+        self.infoLabel.setObjectName("infoLabel")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.infoLabel)
+        self.listInfo = QtWidgets.QListWidget(self.frame)
+        self.listInfo.setObjectName("listInfo")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.listInfo)
+
+
+
+        self.get_users_list()
+        self.retranslateUi(Dialog)
+        QtCore.QMetaObject.connectSlotsByName(Dialog)
+
+    def retranslateUi(self, Dialog):
+        _translate = QtCore.QCoreApplication.translate
+        Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.headerText.setText(_translate("Dialog", "USER HISTORY"))
+        self.clientLabel.setText(_translate("Dialog", "client:"))
+        self.infoLabel.setText(_translate("Dialog", "movie:"))
+        __sortingEnabled = self.listInfo.isSortingEnabled()
+        self.listInfo.setSortingEnabled(False)
+        self.listInfo.setSortingEnabled(__sortingEnabled)
+
+    def get_users_list(self):
+        self.comboBox.clear()
+        users = requests.get('http://nurticcip.pythonanywhere.com/get_users_list').json()
+        for i in users:
+            self.comboBox.addItem(i)
+
+    def get_user_history(self):
+        self.listInfo.clear()
+        user = self.comboBox.currentText()
+        history = requests.get('http://nurticcip.pythonanywhere.com/get_user_history', params={'user':user}).json()
+        arr = set()
+        for i in history:
+            arr.add(tuple(i))
+        text = []
+        for i in list(arr):
+            text.append(f'{i[0]} --> {i[1]}')
+        for i in text:
+            self.listInfo.addItem(i)
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
