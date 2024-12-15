@@ -1,10 +1,16 @@
 import requests
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import (
-    QApplication, QVBoxLayout, QHBoxLayout, QScrollArea,
-    QWidget, QPushButton, QLabel, QMainWindow
+    QApplication, QVBoxLayout, QHBoxLayout, QScrollArea, QLineEdit, QVBoxLayout, QMessageBox,
+    QWidget, QPushButton, QLabel, QMainWindow, QCheckBox
 )
 from PyQt5.QtCore import Qt
+from PyQt5.QtGui import QPixmap, QImage, QPainter, QColor, QFont
+from PyQt5.QtCore import Qt
+import sys
+import random
+import string
+captcha_status = 0
 
 main_user = ''
 class Ui_Register(QtWidgets.QWidget):
@@ -231,6 +237,7 @@ class Ui_SignUpWindow(QtWidgets.QWidget):
 "border:none;\n"
 "font-weight:500;")
         self.captchaCheckBox.setObjectName("captchaCheckBox")
+        self.captchaCheckBox.clicked.connect(self.captcha_page)
         self.sign_inButton = QtWidgets.QPushButton(SignUpWindow)
         self.sign_inButton.setGeometry(QtCore.QRect(80, 510, 161, 51))
         self.sign_inButton.setStyleSheet("QPushButton {\n"
@@ -304,10 +311,11 @@ class Ui_SignUpWindow(QtWidgets.QWidget):
                 url = 'https://nurticcip.pythonanywhere.com/check_password'
                 response = requests.get(url, params={'user': name, 'password': password})
                 if response.json() == True:
-                    self.close()
-                    main_user = name
-                    self.window = MovieListApp()
-                    self.window.show()
+                    if captcha_status == 1:
+                        self.close()
+                        main_user = name
+                        self.window = MovieListApp()
+                        self.window.show()
                 else:
                     QtWidgets.QMessageBox.critical(None, 'Error', 'Incorrect password!')
             else:
@@ -316,6 +324,12 @@ class Ui_SignUpWindow(QtWidgets.QWidget):
             QtWidgets.QMessageBox.critical(None, 'Error', 'Emplty input fields!')
             self.passwordInput.setText("")
             self.usernameInput.setText("")
+
+    def captcha_page(self):
+        self.window = CaptchaWindow()
+        self.window.show()
+
+
 
 class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
     def __init__(self, time, movie):
@@ -356,10 +370,7 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
 "border-radius: 20px\n"
 "}\n"
 "")
-        self.buy.clicked.connect(self.buy_ticket)
-
-
-        
+        self.buy.clicked.connect(self.buy_ticket)        
         self.label_10 = QtWidgets.QLabel(self)
         self.label_10.setGeometry(QtCore.QRect(453, 550, 41, 30))
         font = QtGui.QFont()
@@ -736,7 +747,6 @@ class MovieListApp(QMainWindow):
         self.ui.setupUi(self.window)
         self.window.show()
 
-        
 class Window(QtWidgets.QMainWindow, Ui_SignUpWindow):
     def __init__(self):
         super().__init__()
@@ -954,20 +964,6 @@ class UserHistory(object):
         self.comboBox = QtWidgets.QComboBox(self.frame)
         self.comboBox.setObjectName("comboBox")
         self.comboBox.currentIndexChanged.connect(self.get_user_history)
-        # self.comboBox.setGeometry(150,13,80,20)
-#         self.comboBox.setStyleSheet("QComboBox { font-size: 14px; }")
-#         self.comboBox.setStyleSheet("""
-#     QComboBox {
-#         padding: 5px;
-#         height: 25px;
-#     }
-# """)
-#         self.comboBox.adjustSize()
-#         self.comboBox.resize(150, 30)
-
-
-
-
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.comboBox)
         self.infoLabel = QtWidgets.QLabel(self.frame)
         self.infoLabel.setObjectName("infoLabel")
@@ -1010,6 +1006,79 @@ class UserHistory(object):
             text.append(f'{i[0]} --> {i[1]}')
         for i in text:
             self.listInfo.addItem(i)
+
+class CaptchaWindow(QWidget):
+    def __init__(self):
+        super().__init__()
+        self.setWindowTitle("CAPTCHA")
+        self.captcha_text = self.generate_captcha()
+
+        # CAPTCHA Label
+        self.captcha_label = QLabel(self)
+        self.captcha_label.setPixmap(self.generate_captcha_image(self.captcha_text))
+
+        # CAPTCHA Input Field
+        self.input_field = QLineEdit(self)
+        self.input_field.setPlaceholderText("Enter CAPTCHA here")
+
+        # CAPTCHA Checkbox
+        self.captcha_checkbox = QCheckBox("I am not a robot", self)
+
+        # Submit Button
+        self.submit_button = QPushButton("Sign Up", self)
+        self.submit_button.clicked.connect(self.validate_signup)
+
+        # Layout Setup
+        layout = QVBoxLayout()
+        layout.addWidget(self.captcha_label)
+        layout.addWidget(self.input_field)
+        layout.addWidget(self.captcha_checkbox)
+        layout.addWidget(self.submit_button)
+        self.setLayout(layout)
+
+    def generate_captcha(self):
+        """Generate a random CAPTCHA string."""
+        return ''.join(random.choices(string.ascii_uppercase + string.digits, k=6))
+
+    def generate_captcha_image(self, text):
+        """Create a CAPTCHA image from text."""
+        image = QImage(200, 50, QImage.Format_RGB32)
+        image.fill(QColor("white"))
+
+        painter = QPainter(image)
+        painter.setFont(QFont("Arial", 22))
+        painter.setPen(QColor("black"))
+
+        # Randomly distort the text
+        for i, char in enumerate(text):
+            x = 30 + i * 25
+            y = random.randint(20, 40)
+            painter.drawText(x, y, char)
+
+        painter.end()
+
+        return QPixmap.fromImage(image)
+
+    def validate_signup(self):
+        """Validate CAPTCHA and checkbox."""
+        user_input = self.input_field.text().strip()
+        checkbox_checked = self.captcha_checkbox.isChecked()
+
+        if not checkbox_checked:
+            QMessageBox.warning(self, "Error", "Please confirm the checkbox to prove you're not a robot.")
+        elif user_input != self.captcha_text:
+            QMessageBox.warning(self, "Error", "Invalid CAPTCHA. Please try again.")
+            # Regenerate CAPTCHA
+            self.captcha_text = self.generate_captcha()
+            self.captcha_label.setPixmap(self.generate_captcha_image(self.captcha_text))
+            self.input_field.clear()
+        else:
+            QMessageBox.information(self, "Success", "Sign up successful!")
+            global captcha_status
+            captcha_status = 1
+            self.close()
+
+
 if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)

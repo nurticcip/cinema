@@ -1,0 +1,142 @@
+from flask import Flask, request, jsonify
+
+app = Flask(__name__)
+
+class Movie:
+    def __init__(self, movie):
+        self.name = movie
+        self.booked = []
+        self.seances = {'10:30':[],'12:20':[],'14:10':[]}
+
+    def add_booking(self, seance, seats):
+        self.seances[seance].extend(seats)
+
+    def get_seances_booked(self,seance):
+        return self.seances.get(seance, [])
+
+    def get_seance_profit(self, seance):
+        return sum(self.seances_profit[seance])
+
+
+class Cinema:
+    def __init__(self):
+        self.movies = {}
+        self.history = []
+        self.total = {}
+
+    def add_movie(self, movie):
+        if movie not in self.movies:
+            self.movies[movie] = Movie(movie)
+
+    def booking(self, user, movie, seance, seats):
+        self.movies[movie].add_booking(seance, seats)
+        self.history.append((user, movie, seance))
+
+    def get_user_history(self, user):
+        arr = []
+        for n, movie_name, seance in self.history:
+            if n == user:
+                arr.append((movie_name, seance))
+        return arr
+
+    def get_movies(self):
+        arr = []
+        for i in self.movies.keys():
+            arr.append(i)
+        return arr
+
+    def get_movie_booked_seats(self,movie, seance):
+        return self.movies[movie].get_seances_booked(seance)
+
+    def get_movie_history(self,movie):
+        arr = []
+        for u,m,s in self.history:
+            if m == movie:
+                arr.append((u,s))
+        return arr
+
+
+cinema = Cinema()
+
+users = {}
+
+@app.route('/get_user')
+def getUser():
+    name = request.args.get('user')
+    if name in users.keys():
+        return jsonify(True)
+    else:
+        return jsonify(False)
+
+@app.route('/add_user')
+def addUser():
+    name = request.args.get('user')
+    password = request.args.get('password')
+    users[name] = password
+    return jsonify('Succesfully added')
+
+
+@app.route('/check_password')
+def check_password():
+    name = request.args.get('user')
+    password = request.args.get('password')
+    if users[name] == password:
+        return jsonify(True)
+    else:
+        return jsonify(False)
+
+@app.route('/add_movie')
+def add_movie():
+    movie = request.args.get('movie')
+    cinema.add_movie(movie)
+    return jsonify(True)
+
+@app.route('/get_movies')
+def get_films():
+    return jsonify(cinema.get_movies())
+
+@app.route('/get_movie_booked_seats')
+def get_movie_booked_seats():
+    movie = request.args.get('movie')
+    seance = request.args.get('seance')
+    return jsonify(cinema.get_movie_booked_seats(movie, seance))
+
+@app.route('/movie_seance_booking')
+def movie_seance_booking():
+    user = request.args.get('user')
+    movie = request.args.get('movie')
+    seance = request.args.get('seance')
+    seats = request.args.get('seats').split(',')
+    cinema.booking(user,movie,seance,seats)
+    return jsonify('Sucesfully booked')
+
+@app.route('/get_users_list')
+def get_users_list():
+    return jsonify(list(users))
+
+@app.route('/get_user_history')
+def get_user_history():
+    user = request.args.get('user')
+    return jsonify(cinema.get_user_history(user))
+
+@app.route('/get_movie_history')
+def get_movie_history():
+    movie = request.args.get('movie')
+    return jsonify(cinema.get_movie_history(movie))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
