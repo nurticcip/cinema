@@ -353,137 +353,128 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         font = QtGui.QFont()
         font.setPointSize(-1)
         self.buy.setFont(font)
-        self.buy.setStyleSheet("QPushButton:hover{\n"
-"    background-color: rgb(23, 137, 143);\n"
-"    color: rgb(255, 255, 255);\n"
-"    font-size: 30px;\n"
-"    border-radius: 20px\n"
-"}\n"
-"QPushButton:pressed{\n"
-"    background-color:rgb(14, 85, 89);\n"
-"    color: rgb(255, 255, 255);\n"
-"    font-size: 30px;\n"
-"    border-radius: 20px\n"
-"}\n"
-"QPushButton{\n"
-"background-color: rgb(124, 166, 144);\n"
-"color: rgb(0, 0, 0);\n"
-"font-size: 30px;\n"
-"border-radius: 20px\n"
-"}\n"
-"")
+        self.buy.setStyleSheet("QPushButton"
+                                "{border-radius: 10px;\n"
+    "background-color: rgb(50, 205, 50); /* Лаймово-зелёный цвет */\n"
+    "color: rgb(255, 255, 255); /* Белый цвет текста */\n"
+    "font-size: 30px;\n"
+	"font-weight: 500}\n"
+
+"QPushButton:pressed"
+ "{background-color: rgb(34, 139, 34); /* Тёмно-зелёный цвет при нажатии */\n}"
+)
         self.buy.clicked.connect(self.buy_ticket)        
         self.label_10 = QtWidgets.QLabel(self)
         self.label_10.setGeometry(QtCore.QRect(453, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_10.setFont(font)
-        self.label_10.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_10.setStyleSheet("background-color: rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_11 = QtWidgets.QLabel(self)
         self.label_11.setGeometry(QtCore.QRect(561, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_11.setFont(font)
-        self.label_11.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_11.setStyleSheet("background-color: rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_12 = QtWidgets.QLabel(self)
         self.label_12.setGeometry(QtCore.QRect(615, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_12.setFont(font)
-        self.label_12.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_12.setStyleSheet("background-color: #FFF;\n"
 "border-radius: 10px;")
         self.label_13 = QtWidgets.QLabel(self)
         self.label_13.setGeometry(QtCore.QRect(507, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_13.setFont(font)
-        self.label_13.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_13.setStyleSheet("background-color:rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_14 = QtWidgets.QLabel(self)
         self.label_14.setGeometry(QtCore.QRect(291, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_14.setFont(font)
-        self.label_14.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_14.setStyleSheet("background-color: rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_15 = QtWidgets.QLabel(self)
         self.label_15.setGeometry(QtCore.QRect(238, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_15.setFont(font)
-        self.label_15.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_15.setStyleSheet("background-color:rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_16 = QtWidgets.QLabel(self)
         self.label_16.setGeometry(QtCore.QRect(399, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_16.setFont(font)
-        self.label_16.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_16.setStyleSheet("background-color: rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_17 = QtWidgets.QLabel(self)
         self.label_17.setGeometry(QtCore.QRect(723, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_17.setFont(font)
-        self.label_17.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_17.setStyleSheet("background-color: #FFF;\n"
 "border-radius: 10px;")
         self.label_18 = QtWidgets.QLabel(self)
         self.label_18.setGeometry(QtCore.QRect(884, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_18.setFont(font)
-        self.label_18.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_18.setStyleSheet("background-color: #FFF;\n"
 "border-radius: 10px;")
         self.label_19 = QtWidgets.QLabel(self)
         self.label_19.setGeometry(QtCore.QRect(831, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_19.setFont(font)
-        self.label_19.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_19.setStyleSheet("background-color:#FFF;\n"
 "border-radius: 10px;")
         self.label_20 = QtWidgets.QLabel(self)
         self.label_20.setGeometry(QtCore.QRect(669, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_20.setFont(font)
-        self.label_20.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_20.setStyleSheet("background-color: #FFF;\n"
 "border-radius: 10px;")
         self.label_21 = QtWidgets.QLabel(self)
         self.label_21.setGeometry(QtCore.QRect(777, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_21.setFont(font)
-        self.label_21.setStyleSheet("background-color: rgb(13, 44, 62);\n")
-        
+        self.label_21.setStyleSheet("background-color: #FFF;\n"
+"border-radius: 10px;")
         self.label_6 = QtWidgets.QLabel(self)
         self.label_6.setGeometry(QtCore.QRect(76, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_6.setFont(font)
-        self.label_6.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_6.setStyleSheet("background-color:rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_7 = QtWidgets.QLabel(self)
         self.label_7.setGeometry(QtCore.QRect(130, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_7.setFont(font)
-        self.label_7.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_7.setStyleSheet("background-color:rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_8 = QtWidgets.QLabel(self)
         self.label_8.setGeometry(QtCore.QRect(184, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_8.setFont(font)
-        self.label_8.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_8.setStyleSheet("background-color: rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         self.label_9 = QtWidgets.QLabel(self)
         self.label_9.setGeometry(QtCore.QRect(346, 550, 41, 30))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_9.setFont(font)
-        self.label_9.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_9.setStyleSheet("background-color:rgb(173, 216, 230);\n"
 "border-radius: 10px;")
         
 
@@ -494,7 +485,12 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         font.setFamily("Book Antiqua")
         self.label.setFont(font)
         self.label.setStyleSheet("background-color:  rgb(13, 44, 62);\n"
-"border-radius: 8px;")
+                                 "color: rgb(255, 255, 255);\n"
+                                 "border-radius: 10px;"
+                                 "text-align: center;" 
+                                 "line-height: 40px;" 
+                                 "height: 40px;"
+    "font-size: 20px;")
         _translate = QtCore.QCoreApplication.translate
 
 
@@ -579,19 +575,19 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
 
     def get_button_styles_free(self):
         return ("QPushButton:hover{\n"
-        "    background-color: rgb(23, 137, 143);\n"
+        "    background-color: rgb(255, 0, 0);\n"
         "    color: rgb(255, 255, 255);\n"
         "    font-size: 30px;\n"
         "    border-radius: 8px\n"
         "}\n"
         "QPushButton:pressed{\n"
-        "    background-color:rgb(14, 85, 89);\n"
+        "    background-color:rgb(255, 165, 0); \n"
         "    color: rgb(255, 255, 255);\n"
         "    font-size: 30px;\n"
         "    border-radius: 8px\n"
         "}\n"
         "QPushButton{\n"
-        "background-color: rgb(124, 166, 144);\n"
+        "background-color: rgb(0, 255, 0);\n"
         "color: rgb(0, 0, 0);\n"
         "font-size: 30px;\n"
         "border-radius: 8px\n"
@@ -639,6 +635,7 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         args = ','.join(self.seats_now)
         requests.get('http://nurticcip.pythonanywhere.com/movie_seance_booking', params={'user': main_user, 'movie': self.movie, 'seance': self.time, 'seats': args})
         self.close()
+
 
 class MovieListApp(QMainWindow):
     def __init__(self):
