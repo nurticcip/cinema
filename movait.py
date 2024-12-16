@@ -342,10 +342,10 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         self.setupUi()
 
     def setupUi(self):
-        self.setGeometry(100, 100, 1000, 700)  
+        self.setGeometry(100, 100, 700, 700)  
         self.setWindowTitle('Hall') 
 
-        self.setStyleSheet("background-color: rgb(13, 44, 62);")
+        self.setStyleSheet("background-color: #fff;")
         
         self.buy = QtWidgets.QPushButton('Buy',self)
         self.buy.setGeometry(QtCore.QRect(390, 610, 226, 41))
@@ -485,19 +485,20 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         self.label_9.setFont(font)
         self.label_9.setStyleSheet("background-color: rgb(13, 44, 62);\n"
 "border-radius: 10px;")
-
-
-
         
+
+
         self.label = QtWidgets.QLabel('Screen',self)
-        self.label.setGeometry(QtCore.QRect(47, 27, 905, 28))
+        self.label.setGeometry(QtCore.QRect(50, 30, 600, 20))
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label.setFont(font)
-        self.label.setStyleSheet("background-color: rgb(197, 158, 81);\n"
-"border-radius: 14px;")
+        self.label.setStyleSheet("background-color:  rgb(13, 44, 62);\n"
+"border-radius: 8px;")
         _translate = QtCore.QCoreApplication.translate
-        self.label.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#000000;\">Screen</span></p></body></html>"))
+
+
+
 
         
         self.label_4 = QtWidgets.QLabel(self)
@@ -505,7 +506,7 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_4.setFont(font)
-        self.label_4.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_4.setStyleSheet("background-color: #fff;\n"
 "border-radius: 10px;")
         
         self.label_5 = QtWidgets.QLabel(self)
@@ -513,28 +514,22 @@ class SeatGenerator(QWidget):  # Replace QWidget with the correct base class
         font = QtGui.QFont()
         font.setFamily("Book Antiqua")
         self.label_5.setFont(font)
-        self.label_5.setStyleSheet("background-color: rgb(13, 44, 62);\n"
+        self.label_5.setStyleSheet("background-color: #fff;\n"
 "border-radius: 10px;")
-        self.label_4.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">A</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">B</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">C</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">D</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">E</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">F</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">G</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">H</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">I</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">J</span></p></body></html>"))
-        self.label_5.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">A</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">B</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">C</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">D</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">E</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">F</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">G</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">H</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">I</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">J</span></p></body></html>"))
+        self.label_4.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">A</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">B</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">C</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">D</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">E</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">F</span></p><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">G</span>"))
         
         self.label_6.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">1</span></p></body></html>"))
         self.label_7.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">2</span></p></body></html>"))
         self.label_8.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">3</span></p></body></html>"))
+        self.label_15.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">4</span></p></body></html>"))
+        self.label_14.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">5</span></p></body></html>"))
         self.label_9.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">6</span></p></body></html>"))
         
-        self.label_10.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">8</span></p></body></html>"))
-        self.label_11.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">10</span></p></body></html>"))
-        self.label_12.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">11</span></p></body></html>"))
-        self.label_13.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">9</span></p></body></html>"))
-        self.label_14.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">5</span></p></body></html>"))
-        self.label_15.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">4</span></p></body></html>"))
         self.label_16.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">7</span></p></body></html>"))
-        self.label_17.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">13</span></p></body></html>"))
-        self.label_18.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">16</span></p></body></html>"))
-        self.label_19.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">15</span></p></body></html>"))
-        self.label_20.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">12</span></p></body></html>"))
-        self.label_21.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">14</span></p></body></html>"))
+        self.label_10.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">8</span></p></body></html>"))
+        self.label_13.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">9</span></p></body></html>"))
+        self.label_11.setText(_translate("Dialog", "<html><head/><body><p align=\"center\"><span style=\" font-size:16pt; color:#ffffff;\">10</span></p></body></html>"))
+
 
 
 
@@ -660,15 +655,71 @@ class MovieListApp(QMainWindow):
         
         history_button = QPushButton("History")
         history_button.clicked.connect(self.userHistory)
+        history_button.setStyleSheet("""
+        QPushButton {
+        font: 75 8pt "MS Shell Dlg 2";
+        border-radius: 10px;
+        background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+        color: rgb(255, 255, 255); /* Белый цвет текста */
+        font-size: 20px;
+        font-weight: 300;
+        }
+
+        QPushButton:pressed {
+        background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+        }
+        """)
         
         movie_info_button = QPushButton("Movie Info")
         movie_info_button.clicked.connect(self.movieInfo)
+        movie_info_button.setStyleSheet("""
+        QPushButton {
+        font: 75 8pt "MS Shell Dlg 2";
+        border-radius: 10px;
+        background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+        color: rgb(255, 255, 255); /* Белый цвет текста */
+        font-size: 20px;
+        font-weight: 300;
+        }
+
+        QPushButton:pressed {
+        background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+        }
+        """)
         
         update_button = QPushButton("Update Movie")
         update_button.clicked.connect(self.updateMovie)
+        update_button.setStyleSheet("""
+        QPushButton {
+        font: 75 8pt "MS Shell Dlg 2";
+        border-radius: 10px;
+        background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+        color: rgb(255, 255, 255); /* Белый цвет текста */
+        font-size: 20px;
+        font-weight: 300;
+        }
+
+        QPushButton:pressed {
+        background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+        }
+        """)
         
         refresh_button = QPushButton("Refresh")
         refresh_button.clicked.connect(self.refreshPage)
+        refresh_button.setStyleSheet("""
+        QPushButton {
+        font: 75 8pt "MS Shell Dlg 2";
+        border-radius: 10px;
+        background-color: rgb(255, 165, 0); /* Оранжевый цвет */
+        color: rgb(255, 255, 255); /* Белый цвет текста */
+        font-size: 20px;
+        font-weight: 300;
+        }
+
+        QPushButton:pressed {
+        background-color: rgb(255, 140, 0); /* Темно-оранжевый цвет при нажатии */
+        }
+        """)
         
         upper_layout.addWidget(history_button)
         upper_layout.addWidget(movie_info_button)
@@ -889,7 +940,7 @@ class MovieInfo(object):
         Dialog.resize(541, 701)
         self.headerText = QtWidgets.QLabel(Dialog)
         self.headerText.setGeometry(QtCore.QRect(190, 20, 141, 51))
-        self.headerText.setStyleSheet("color:#fff;\n"
+        self.headerText.setStyleSheet("color:#000;\n"
 "font-weight:bold;\n"
 "font-size:24pt;\n"
 "background-color:none;\n"
@@ -926,7 +977,7 @@ class MovieInfo(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.headerText.setText(_translate("Dialog", "MOVIE INFO"))
+        self.headerText.setText(_translate("Dialog", "INFO"))
         self.filmText.setText(_translate("Dialog", "FILM:"))
         self.peopleLabel.setText(_translate("Dialog", "PEOPLE:"))
         __sortingEnabled = self.listUsers.isSortingEnabled()
@@ -997,7 +1048,7 @@ class UserHistory(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.headerText.setText(_translate("Dialog", "USER HISTORY"))
+        self.headerText.setText(_translate("Dialog", "HISTORY"))
         self.clientLabel.setText(_translate("Dialog", "client:"))
         self.infoLabel.setText(_translate("Dialog", "movie:"))
         __sortingEnabled = self.listInfo.isSortingEnabled()
