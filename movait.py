@@ -316,6 +316,8 @@ class Ui_SignUpWindow(QtWidgets.QWidget):
                         main_user = name
                         self.window = MovieListApp()
                         self.window.show()
+                    else:
+                        QMessageBox.information(self, "Warning", "Check your captcha!")
                 else:
                     QtWidgets.QMessageBox.critical(None, 'Error', 'Incorrect password!')
             else:
@@ -650,46 +652,65 @@ class MovieListApp(QMainWindow):
         self.setGeometry(400, 100, 500, 600)
         
         # Main container
-        main_widget = QWidget()
-        main_layout = QVBoxLayout()
+        self.main_widget = QWidget()
+        self.main_layout = QVBoxLayout()
         
         # Upper layout for additional buttons
         upper_layout = QHBoxLayout()
+        
         history_button = QPushButton("History")
         history_button.clicked.connect(self.userHistory)
+        
         movie_info_button = QPushButton("Movie Info")
         movie_info_button.clicked.connect(self.movieInfo)
+        
         update_button = QPushButton("Update Movie")
         update_button.clicked.connect(self.updateMovie)
+        
+        refresh_button = QPushButton("Refresh")
+        refresh_button.clicked.connect(self.refreshPage)
+        
         upper_layout.addWidget(history_button)
         upper_layout.addWidget(movie_info_button)
         upper_layout.addWidget(update_button)
-        
-        # Scroll area setup
-        scroll_area = QScrollArea()
-        scroll_area.setWidgetResizable(True)
-        scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
-        scroll_area.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+        upper_layout.addWidget(refresh_button)
 
-        # Scroll area content
+        # Scroll area setup
+        self.scroll_area = QScrollArea()
+        self.scroll_area.setWidgetResizable(True)
+        self.scroll_area.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
+        self.scroll_area.setVerticalScrollBarPolicy(Qt.ScrollBarAsNeeded)
+
+        # Load initial movie list
+        self.loadMovieList()
+
+        # Add upper layout and scroll area to main layout
+        self.main_layout.addLayout(upper_layout)
+        self.main_layout.addWidget(self.scroll_area)
+        self.main_widget.setLayout(self.main_layout)
+        self.setCentralWidget(self.main_widget)
+
+    def loadMovieList(self):
+        """Loads the movie list into the scroll area."""
         scroll_content = QWidget()
         scroll_layout = QVBoxLayout(scroll_content)  # Vertical layout for movie widgets
 
-        # Example movie list
-        movies = requests.get('http://nurticcip.pythonanywhere.com/get_movies').json()
+        try:
+            movies = requests.get('http://nurticcip.pythonanywhere.com/get_movies').json()
+        except Exception as e:
+            movies = []
+            print(f"Error fetching movies: {e}")
 
         for movie in movies:
             movie_widget = self.create_movie_widget(movie)
             scroll_layout.addWidget(movie_widget)
 
         scroll_content.setLayout(scroll_layout)
-        scroll_area.setWidget(scroll_content)
+        self.scroll_area.setWidget(scroll_content)
 
-        # Add upper layout and scroll area to main layout
-        main_layout.addLayout(upper_layout)
-        main_layout.addWidget(scroll_area)
-        main_widget.setLayout(main_layout)
-        self.setCentralWidget(main_widget)
+    def refreshPage(self):
+        """Refreshes the movie list."""
+        self.loadMovieList()
 
     def create_movie_widget(self, movie_name):
         """Create a widget for a single movie with buttons."""
@@ -842,12 +863,6 @@ class UpdateMoviePage(object):
         self.fILMLabel.setText(_translate("Dialog", "FILM:"))
         self.addButton.setText(_translate("Dialog", "Add"))
         self.filmDel.setText(_translate("Dialog", "FILM:"))
-        self.comboBox.setItemText(0, _translate("Dialog", "Moana2"))
-        self.comboBox.setItemText(1, _translate("Dialog", "Venom3"))
-        self.comboBox.setItemText(2, _translate("Dialog", "Evil"))
-        self.comboBox.setItemText(3, _translate("Dialog", "Gladiator2"))
-        self.comboBox.setItemText(4, _translate("Dialog", "Home alone"))
-        self.comboBox.setItemText(5, _translate("Dialog", "Home alone2"))
         self.deleteButton.setText(_translate("Dialog", "Delete"))
 
     def getMoviesList(self):
@@ -861,6 +876,7 @@ class UpdateMoviePage(object):
         movie = self.filmInput.text()
         requests.get('http://nurticcip.pythonanywhere.com/add_movie', params={'movie':movie})
         self.getMoviesList()
+        self.filmInput.setText("")
 
     def delete_movie(self):
         movie = self.comboBox.currentText()
