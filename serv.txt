@@ -28,6 +28,10 @@ class Cinema:
         if movie not in self.movies:
             self.movies[movie] = Movie(movie)
 
+    def delete_movie(self, movie):
+        if movie in self.movies:
+            del self.movies[movie]
+
     def booking(self, user, movie, seance, seats):
         self.movies[movie].add_booking(seance, seats)
         self.history.append((user, movie, seance))
@@ -75,7 +79,6 @@ def addUser():
     users[name] = password
     return jsonify('Succesfully added')
 
-
 @app.route('/check_password')
 def check_password():
     name = request.args.get('user')
@@ -89,6 +92,12 @@ def check_password():
 def add_movie():
     movie = request.args.get('movie')
     cinema.add_movie(movie)
+    return jsonify(True)
+
+@app.route('/delete_movie')
+def delete_movie():
+    movie = request.args.get('movie')
+    cinema.delete_movie(movie)
     return jsonify(True)
 
 @app.route('/get_movies')
@@ -123,20 +132,3 @@ def get_user_history():
 def get_movie_history():
     movie = request.args.get('movie')
     return jsonify(cinema.get_movie_history(movie))
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
